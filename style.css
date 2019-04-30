@@ -1,0 +1,158 @@
+html, body {
+	font: 14px/1.21 'Helvetica Neue', arial, sans-serif;
+	font-weight: 400;
+}
+
+body {
+	display: flex;
+}
+
+a {
+	color: unset;
+}
+
+header {
+	padding: 10px;
+}
+
+.commit-info {
+	background-color: #D1C4E9;
+}
+
+.diff {
+	padding: 10px;
+}
+
+section {
+	display: flex;
+	flex-direction: column;
+}
+
+.open-government-licence span {
+	display: inline-block;
+	margin: 5px;
+	vertical-align: middle;
+}
+
+.open-government-licence .logo a {
+    display: block;
+    width: 41px;
+    height: 17px;
+    overflow: hidden;
+    text-indent: -999em;
+    background: url(https://assets.publishing.service.gov.uk/static/images/open-government-licence-c1aedc8257961b938b4c7a21a2b0db3f2716dd9ef782cea73110dc69107c9042.png) 0 0 no-repeat;
+}
+
+.commit-log a {
+	text-decoration-line: none;
+}
+
+.commit-log a li {
+	text-decoration-line: underline;
+}
+
+.commit-log li.added::before {
+	content: "A";
+	color: green;
+}
+
+.commit-log li.modified::before {
+	content: "M";
+	color: goldenrod;
+}
+
+.commit-log>*:nth-child(2n) {
+	background-color: lightyellow;
+}
+
+.commit-log {
+	display: flex;
+	flex-direction: column;
+	padding: 0;
+}
+
+.commit-log .table-header {
+	display: none;
+}
+
+.commit-log ul li::before {
+	padding-right: 10px;
+}
+
+.commit-log>* {
+	display: block;
+}
+
+.commit-log ul {
+	padding: 5px 10px;
+}
+
+.commit-log p {
+	padding: 5px 33px;
+}
+
+.commit-log h3 {
+	margin: 0;
+	padding: 15px;
+}
+
+.diff del {
+	background-color: rgb(255, 161, 161);
+}
+
+.diff ins {
+	background-color: rgb(160, 255, 160);
+	text-decoration-line: none;
+}
+
+/* wide 2-column layout */
+
+@media screen and (min-width: 900px) {
+	.commit-log .table-header {
+		display: table-row;
+	}
+	.commit-log {
+		display: table;
+		table-layout: fixed;
+	}
+	.commit-log>*::before {
+		display: table-cell;
+	}
+	.commit-log>* {
+		display: table-row;
+	}
+	.commit-log p, .commit-log ul {
+		display: table-cell;
+	}
+	.commit-log ul li {
+		width: 400px;
+	}
+	.commit-log ul li {
+		display: flex;
+	}
+	.commit-log p {
+		text-overflow: ellipsis;
+		text-indent: -145px;
+		padding-left: 145px;
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	body {
+		background-color: #212121;
+		color: #E0F2F1;
+	}
+	.commit-info {
+		background-color: #6200EA;
+	}
+	.commit-log>*:nth-child(2n) {
+		background-color: #424242;
+	}
+	.diff del {
+		background-color: #C62828;
+	}
+	.diff ins {
+		background-color: #1B5E20;
+		text-decoration-line: none;
+	}
+}

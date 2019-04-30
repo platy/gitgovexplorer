@@ -1,0 +1,32 @@
+{
+  "private": true,
+  "name": "brexit-diff",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
+    "build": "preact build --no-prerender",
+    "serve": "preact build --no-prerender && preact serve",
+    "dev": "preact watch",
+    "lint": "eslint src"
+  },
+  "eslintConfig": {
+    "extends": "eslint-config-synacor"
+  },
+  "eslintIgnore": [
+    "build/*"
+  ],
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-developit": "^1.1.1",
+    "if-env": "^1.0.4",
+    "preact-cli": "^2.2.1"
+  },
+  "dependencies": {
+    "@octokit/rest": "^16.24.1",
+    "he": "^1.2.0",
+    "htmldiff-js": "^1.0.5",
+    "preact": "^8.4.2",
+    "preact-waypoint": "^1.0.7"
+  }
+}
