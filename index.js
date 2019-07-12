@@ -148,7 +148,7 @@ class CommitLog extends Component {
 			<Router>
 				<div path="/">
 					<header>
-						<h1>UK Government Brexit advice update diffs</h1>
+						<h1 class="app-logo">UK Government Brexit advice update diffs</h1>
 						<p>List of Brexit updates provided by the UK government since 2019-04-09, the updates are displayed in the order in which the government provided them over their <a href="https://www.gov.uk/government/brexit">brexit notification service</a>. The raw data is stored in <a href="https://github.com/platy/gitgovuk/commits/">github.com/platy/gitgovuk</a>, this site provides an improved view of document diffs for modified documents. This website is not affiliated with the UK government.</p>
 						<div class="open-government-licence">
 							<span class="logo"><a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence</a></span>
