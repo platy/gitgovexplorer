@@ -32,7 +32,7 @@ export default class DocDiff extends Component {
 
 	changeType(sha, parent) {
 		if (parent) {
-			return <p>Showing diff : {sha}..{parent}</p>
+			return <p>Showing diff : {sha.substring(0,10)}..{parent.substring(0,10)}</p>
 		} else {
 			return <p>Showing previously unseen document : {sha}</p>
 		}
