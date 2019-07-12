@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "brexit-diff",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "license": "MIT",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",

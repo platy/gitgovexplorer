@@ -6,7 +6,7 @@ COPY package.json package-lock.json ./
 RUN npm install
 
 # build
-COPY . .
+COPY *.js *.css manifest.json ./
 RUN npm test
 RUN npm run build
 
@@ -17,4 +17,4 @@ EXPOSE 80
 COPY --from=build /build/build /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/nginx.template
 
-CMD ["/bin/bash", "-c", "envsubst < /etc/nginx/conf.d/nginx.template > /etc/nginx/conf.d/default.conf && exec nginx -g 'daemon off;'"]
+CMD ["/bin/bash", "-c", "envsubst '$GITHUB_TOKEN' < /etc/nginx/conf.d/nginx.template > /etc/nginx/conf.d/default.conf && exec nginx -g 'daemon off;'"]

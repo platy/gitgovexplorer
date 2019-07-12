@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: gitgovexplorer
-        image: rg.nl-ams.scw.cloud/njkonl/gitgovexplorer:0.0.1
+        image: rg.nl-ams.scw.cloud/njkonl/gitgovexplorer:0.0.4
         resources:
           limits:
             memory: "128Mi"
