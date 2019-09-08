@@ -27,6 +27,9 @@ spec:
           limits:
             memory: "128Mi"
             cpu: "500m"
+          requests:
+            memory: "80Mi"
+            cpu: "10m"
         ports:
         - containerPort: 80
         envFrom:
@@ -68,7 +71,15 @@ spec:
         backend:
           serviceName: gitgovexplorer
           servicePort: 80
+  - host: gitgovuk.njk.onl
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: gitgovexplorer
+          servicePort: 80
   tls:
   - hosts:
     - govukdiff.njk.onl
+    - gitgovuk.njk.onl
     secretName: govukdiff-cert
