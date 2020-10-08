@@ -25,7 +25,7 @@
   "dependencies": {
     "@octokit/rest": "^16.24.1",
     "he": "^1.2.0",
-    "htmldiff-js": "^1.0.5",
+    "node-htmldiff": "^0.9.3",
     "preact": "^8.4.2",
     "preact-waypoint": "^1.0.7"
   }

@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: gitgovexplorer
-        image: rg.nl-ams.scw.cloud/njkonl/gitgovexplorer:0.0.4
+        image: rg.nl-ams.scw.cloud/njkonl/gitgovexplorer:0.0.8
         resources:
           limits:
             memory: "128Mi"
@@ -60,7 +60,6 @@ metadata:
   name: gitgovexplorer
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
-    certmanager.k8s.io/cluster-issuer: letsencrypt-production
     kubernetes.io/ingress.class: "nginx"
 spec:
   rules:

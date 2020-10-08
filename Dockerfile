@@ -6,6 +6,7 @@ COPY package.json package-lock.json ./
 RUN npm install
 
 # build
+COPY assets ./assets
 COPY *.js *.css manifest.json ./
 RUN npm test
 RUN npm run build

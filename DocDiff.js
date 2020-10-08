@@ -1,5 +1,5 @@
 import { h, render, Component } from 'preact';
-import HtmlDiff from 'htmldiff-js';
+import diff from 'node-htmldiff';
 import './normalize.min.css';
 // import './mercury.min.css';
 import './style.css';
@@ -24,7 +24,7 @@ export default class DocDiff extends Component {
 		rawFrom.then(rawfrom => {
 			rawTo.then(rawto => {
 				this.setState({ 
-					diff: HtmlDiff.execute(rawfrom || '', rawto || ''),
+					diff: diff(rawfrom || '', rawto || ''),
 				 });
 			});
 		});
