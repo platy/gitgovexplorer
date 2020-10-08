@@ -26,11 +26,28 @@ header {
 }
 
 .commit-info {
-	background-color: #D1C4E9;
+	background-color: #d7cfe6;
 }
 
 .diff {
 	padding: 10px;
+}
+
+[data-diff-node] {
+  position: relative;
+}
+
+[data-diff-node] + [data-diff-node]::before, h3[data-diff-node]::after, section[data-diff-node]::after, p[data-diff-node]::after, ul[data-diff-node]::after, ol[data-diff-node]::after {
+  content: '';
+  width: 100%;
+  height: 10px;
+  display: block;
+  position: absolute;
+	z-index: -1;
+}
+
+[data-diff-node] + [data-diff-node]::before {
+	top: -10px;
 }
 
 section {
@@ -106,12 +123,19 @@ section {
 	padding: 15px;
 }
 
-.diff del {
-	background-color: rgb(255, 161, 161);
+.diff del,
+.diff [data-diff-node="del"],
+.diff [data-diff-node="del"]::before,
+.diff [data-diff-node="del"]::after
+{
+	background-color: rgb(253, 194, 194);
 }
 
-.diff ins {
-	background-color: rgb(160, 255, 160);
+.diff ins,
+.diff [data-diff-node="ins"],
+.diff [data-diff-node="ins"]::before,
+.diff [data-diff-node="ins"]::after {
+	background-color: rgb(231, 255, 231);
 	text-decoration-line: none;
 }
 
@@ -161,11 +185,12 @@ section {
 	.commit-log>*:nth-child(2n) {
 		background-color: #424242;
 	}
-	.diff del {
+	.diff del,
+	.diff [data-diff-node="del"] {
 		background-color: #C62828;
 	}
-	.diff ins {
+	.diff ins,
+	.diff [data-diff-node="ins"] {
 		background-color: #1B5E20;
-		text-decoration-line: none;
 	}
 }
